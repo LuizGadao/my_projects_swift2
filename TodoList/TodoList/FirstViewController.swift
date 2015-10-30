@@ -52,13 +52,17 @@ class FirstViewController: UIViewController, UITableViewDelegate {
         }
     }
     
-    //TODO REFACTOR THIS METHODS    
+    //TODO REFACTOR THIS METHODS
     func isDataForKey(Key:String)->Bool{
         return NSUserDefaults.standardUserDefaults().objectIsForcedForKey(Key)
     }
     
     func saveData(key:String, obj:AnyObject){
         NSUserDefaults.standardUserDefaults().setObject(obj, forKey: key)
+    }
+    
+    func getData(key:String)->AnyObject{
+        return NSUserDefaults.standardUserDefaults().objectForKey(key)!;
     }
 
 
